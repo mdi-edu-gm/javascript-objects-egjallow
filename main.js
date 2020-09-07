@@ -50,4 +50,97 @@ const students = [
     }
 ];
 
-sadsa
+//sadsa
+
+let obj = {
+    name:"Essu Fonny",
+    dob: 1995,
+    address:"Brikama", 
+    skill : 6,
+    interest :[ "programming", "research", "Cybersecurity", "Networking", "computer repair", "social Engineer", "workout", "riding"]  
+}
+
+function addStudent(obj) {
+    students.push(obj);
+    console.log(students)
+    
+}
+addStudent(obj)
+
+
+function studenNames(students) {
+    let names = [];
+    students.forEach(element => {
+       names.push(element.name) 
+       //console.log(element.name)
+    });
+    console.log(names)
+}
+studenNames(students);
+
+function interest(students) {
+    students.filter(ele => {
+        if(ele.address === "Jam City"){
+            console.log(ele.interest);
+        }
+    })   
+}
+
+interest(students)
+
+function countSkill(students) {
+    let count = 0;
+    students.forEach(element => {
+        if (element.skill > 5) {
+            count++;
+        }
+        
+    });
+    console.log(count);
+}
+countSkill(students)
+
+function averageSkill(students) {
+    let topskilled = [];
+    let cumSkill = 0;
+    let count = 0;
+    students.forEach(element => {
+        if (element.skill > 5) {
+            topskilled.push(element)
+            cumSkill += parseInt(element.skill);
+            count++;
+        }
+        
+    });
+
+   let average = cumSkill/ count
+    console.log(average);
+}
+averageSkill(students)
+
+function namesWithE(students) {
+    let student = [];
+    students.filter(ele => {
+        if(ele.name.startsWith('E')){
+            student.push(ele);
+        }
+    })   
+    console.log(student)
+}
+
+namesWithE(students)
+
+function readingStd(students) {
+        let reading = [];
+        students.filter(ele => {
+            if(ele.interest.includes("Reading")){
+                reading.push({name: ele.name, address: ele.address});
+            }
+        })   
+        console.log(reading)
+    }
+    
+    readingStd(students)
+
+
+
